@@ -40,7 +40,6 @@ function quizTime() {
     round++;
     $(".question" + round).removeClass("hide");
     incorrect++;
-    console.log(incorrect);
     if (round === 11) {
         clearInterval(timer);
         clearInterval(second);
@@ -91,6 +90,8 @@ $(".answers").on("click", ".ans", function() {
         $("#passFail").text("Failed");
         $(".ratio").text("You answered " + correct + " out of 10 correctly! Do better!");
 }})
+
+//if user clicks "Try Again" button on results page, the game starts over from question 1"
 var restart = $(".again").on("click", function() {
     $(".question11").addClass("hide");
     $(".question1").removeClass("hide");
@@ -101,6 +102,6 @@ var restart = $(".again").on("click", function() {
     timer = setInterval(quizTime, 20000);
     correct = 0;
     incorrect = 0;
-    round = 1;
+    round = 0;
 })
 })
