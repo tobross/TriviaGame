@@ -8,6 +8,9 @@ var round = 1;
 var timer;
 var counter;
 var second;
+//Display opening page with title, instructions, and start button.
+
+//after start button is pressed, hide start page and display first question, image for question, answers with selectable buttons, and timer.
 var game =$(document).on("click", ".start", function() {
     $(".titlePage").addClass("hide");
     $(".question1").removeClass("hide");
@@ -44,6 +47,8 @@ function quizTime() {
 
     };
 };
+//if a selection is not made by the end of timeOut, increment incorrect by 1, hide question, and display the next question.
+
 $(".answers").on("click", ".ans", function() {
     $(".counter").removeClass("hide");
     counter = 20;
@@ -72,6 +77,10 @@ $(".answers").on("click", ".ans", function() {
         incorrect++;
         incorrect = incorrect;
     }
+    //if a selection is made, hide question, reset timer, and display next question and image. Also increment correct or incorrect by 1.
+
+    //After all 10 questions have been answered or timed out, display end screen with "loading bar" showing percentage correct, number of questions correct out of total
+
     if (correct >= 6) {
         $(".winLose").html("<img class='questionPic' src='assets/images/dndvictory.png' alt='victorypic'>");
         $("#passFail").text("Passed");
@@ -82,26 +91,16 @@ $(".answers").on("click", ".ans", function() {
         $("#passFail").text("Failed");
         $(".ratio").text("You answered " + correct + " out of 10 correctly! Do better!");
 }})
-
-// var answer = $(".answers").on("click", "btn", function() {
-//     if (answer = ".correct") {
-//         correct++;
-//     }
-// })
-//Display opening page with title, instructions, and start button.
-
-
-//after start button is pressed, hide start page and display first question, image for question, answers with selectable buttons, and timer.
-
-
-//if a selection is made, hide question, reset timer, and display next question and image. Also increment correct or incorrect by 1.
-
-
-
-//if a selection is not made by the end of timeOut, increment incorrect by 1, hide question, and display the next question.
-
-
-//After all 10 questions have been answered or timed out, display end screen with "loading bar" showing percentage correct, number of questions correct out of total
-
-
+var restart = $(".again").on("click", function() {
+    $(".question11").addClass("hide");
+    $(".question1").removeClass("hide");
+    clearInterval(trackTime);
+    clearInterval(quizTime);
+    trackTime();
+    counter = 20
+    timer = setInterval(quizTime, 20000);
+    correct = 0;
+    incorrect = 0;
+    round = 1;
+})
 })
