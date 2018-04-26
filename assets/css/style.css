@@ -1,0 +1,80 @@
+body {
+    background: url("../images/page.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: "Bookmania Regular", "Regular Italic", Bold;
+    Font-size: 9pt;
+}
+.questionPic {
+    width: 40%;
+    height: auto;
+    margin-left: 30%;
+    Margin-right: 30%;
+    border: solid 5px #e60504;
+}
+.question {
+    color: #58170d;
+    font-family: "Mrs Eaves";
+    font-variant: small-caps;
+    font-size: 20pt;
+    margin-bottom: -10px;
+    margin-left:10%;
+}
+.btn {
+    background: #58170d;
+}
+.btn:hover {
+    background: #9d0a0e;
+}
+.a {
+    Margin-left: 30%;
+}
+.b {
+    margin-left: 50%;
+}
+.c {
+    margin-left: 30%;
+}
+.d {
+    margin-left: 50%;
+}
+.divider {
+    margin-top: 0px;
+    width: 100%;
+    height: 8px;
+}
+.titlePic {
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    border: solid 5px #9d0a0e;
+}
+.start {
+    margin-top: 20px;
+    height: 50px;
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    border: 2px black solid;
+}
+.hide {
+    display: none;
+}
+.counter {
+    float: left;
+    color: #58170d;
+    font-family: "Mrs Eaves";
+    font-variant: small-caps;
+    font-size: 20pt;
+    border: solid 5px #9d0a0e;
+    border-radius: 20%;
+}
+.clear {
+    clear: both;
+    content: "";
+    display: table;
+}
+.progress {
+    margin-left: -5%;
+    width: 100%;
+}
