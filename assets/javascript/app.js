@@ -54,30 +54,32 @@ $(".answers").on("click", ".ans", function() {
     $(".question" + round).addClass("hide");
     round++;
     $(".question" + round).removeClass("hide");    
-    if (round === 11) {
+    if (round === 11 && $(this).hasClass("correct")) {
+        correct++;
+        clearInterval(second);
+        clearInterval(timer);
+    }
+    else if (round === 11 && $(this).hasClass("incorrect")) {
+        incorrect++;
         clearInterval(second);
         clearInterval(timer);
     }
     else if ($(this).hasClass("correct")) {
         correct++;
-        console.log(correct + " correct");
         correct = correct;
     }
     else {
         incorrect++;
-        console.log(incorrect + " incorrect");
         incorrect = incorrect;
     }
     if (correct >= 6) {
         $(".winLose").html("<img class='questionPic' src='assets/images/dndvictory.png' alt='victorypic'>");
         $("#passFail").text("Passed");
-        $(".progressBar").attr("aria-valuenow", correct).css("width", correct);
         $(".ratio").text("You answered " + correct + " out of 10 correctly! We feast tonight!");
     }
     else {
         $(".winLose").html("<img class='questionPic' src='assets/images/dndtpk.png' alt='tpk'>");
         $("#passFail").text("Failed");
-        $(".progressBar").attr("aria-valuenow", correct).css("width", correct);
         $(".ratio").text("You answered " + correct + " out of 10 correctly! Do better!");
 }})
 
