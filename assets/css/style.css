@@ -11,6 +11,7 @@ body {
     margin-left: 30%;
     Margin-right: 30%;
     border: solid 5px #e60504;
+    max-height: 300px;
 }
 .question {
     color: #58170d;
@@ -73,8 +74,4 @@ body {
     clear: both;
     content: "";
     display: table;
-}
-.progress {
-    margin-left: -5%;
-    width: 100%;
 }
